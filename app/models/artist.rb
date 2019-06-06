@@ -10,6 +10,9 @@
 #
 
 class Artist < ApplicationRecord
+
+  has_many :artworks
+
   def to_s
     "#{first_name} #{last_name}"
   end

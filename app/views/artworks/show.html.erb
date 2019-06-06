@@ -1,0 +1,6 @@
+<h1><%= @artwork.title %></h1>
+<p><%= link_to @artwork.artist, @artwork.artist %></p>
+<%= image_tag @artwork.image %>
+
+<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+<%= link_to 'Back', artworks_path %>

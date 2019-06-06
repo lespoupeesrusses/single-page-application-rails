@@ -2,5 +2,16 @@
 
 <h1><%= @artist %></h1>
 
+<ul>
+  <% @artist.artworks.each do |artwork| %>
+    <li>
+      <%= link_to artwork do %>
+        <%= artwork.title %>
+        <%= image_tag artwork.image %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>

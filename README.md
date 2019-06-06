@@ -1,5 +1,13 @@
 # Single Page Application Rails
 
+```
+bundle
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+```
+
 ## Vendor
 
 Versions récentes et minifiées d'Angularjs, et des extensions animate et route.
@@ -60,3 +68,7 @@ Pour éviter le changement des noms de variables à la compilation, qui casse l'
 /config/environments/production.rb
 
     config.assets.js_compressor = Uglifier.new(mangle: false)
+
+## Credits
+
+Data from https://github.com/tategallery/collection

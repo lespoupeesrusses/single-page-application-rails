@@ -1,4 +1,8 @@
 <div class="artists__show">
   <h1>{{artist.first_name}} {{artist.last_name}}</h1>
   <a href="<%= root_path %>">Artistes</a>
+  <div ng-repeat="artwork in artist.artworks">
+    {{artwork.title}}
+    <img ng-src="{{artwork.image}}" />
+  </div>
 </div>
