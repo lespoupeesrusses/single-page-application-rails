@@ -1,12 +1,6 @@
-<p>
-  <strong>First name:</strong>
-  <%= @artist.first_name %>
-</p>
+<% content_for :title, @artist %>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @artist.last_name %>
-</p>
+<h1><%= @artist %></h1>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
