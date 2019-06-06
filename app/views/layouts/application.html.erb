@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="application" ng-cloak ng-controller="ApplicationController">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SinglePageApplicationRails</title>
+    <base href="/">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <noscript>
+      <%= yield %>
+    </noscript>
+    <div ng-view class="fade"></div>
+    <script type="text/ng-template" id="artists/index">
+      <div class="artists__index">
+        <div ng-repeat="artist in artists">
+          <a href="{{artist.path}}">
+            {{artist.first_name}} {{artist.last_name}}
+          </a>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="artists/show">
+      <div class="artists__show">
+        <h1>{{artist.first_name}} {{artist.last_name}}</h1>
+      </div>
+    </script>
+  </body>
+</html>
