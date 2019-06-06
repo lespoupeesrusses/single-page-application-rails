@@ -8,8 +8,10 @@ Versions récentes et minifiées d'Angularjs, et des extensions animate et route
 
 L'application doit être démarrée avant le chargement des controllers:
 
-    //= require_self
-    //= require_tree ./application
+```js
+//= require_self
+//= require_tree ./application
+```
 
 ## HTML
 
@@ -17,30 +19,39 @@ Le layout application présente plusieurs points importants.
 
 1. L'instanciation d'application avec un nom, un contrôleur global et un cloak.
 
-    <html ng-app="application" ng-cloak ng-controller="ApplicationController">
+```html
+<html ng-app="application" ng-cloak ng-controller="ApplicationController">
+```
 
 2. La base pour le routage
-
-    <base href="/">
+```html
+<base href="/">
+```
 
 3. La balise noscript pour le SEO et en cas de non-interprétation du javascript
 
-    <noscript>
-      <%= yield %>
-    </noscript>
+```html
+<noscript>
+  <%= yield %>
+</noscript>
+```
 
 4. La balise ng-view avec le fade, pour les instanciations avec transitions
 
-    <div ng-view class="fade"></div>
+```html
+<div ng-view class="fade"></div>
+```
 
 5. Le chargement automatique des templates angular
 
-    <% Dir['app/views/**/*.template.erb'].each do |path| %>
-      <% template = path.remove('app/views/').remove('.template.erb') %>
-      <script type="text/ng-template" id="<%= template %>">
-        <%= render file: "#{template}.template.erb" %>
-      </script>
-    <% end %>
+```html
+<% Dir['app/views/**/*.template.erb'].each do |path| %>
+  <% template = path.remove('app/views/').remove('.template.erb') %>
+  <script type="text/ng-template" id="<%= template %>">
+    <%= render file: "#{template}.template.erb" %>
+  </script>
+<% end %>
+```
 
 ## Production
 
