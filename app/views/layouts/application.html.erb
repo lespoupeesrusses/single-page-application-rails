@@ -15,6 +15,7 @@
     </noscript>
     <div ng-view class="fade"></div>
     <% Dir['app/views/**/*.template.erb'].each do |path| %>
+      <% byebug %>
       <% template = path.remove('app/views/').remove('.template.erb') %>
       <script type="text/ng-template" id="<%= template %>">
         <%= render file: "#{template}.template.erb" %>
