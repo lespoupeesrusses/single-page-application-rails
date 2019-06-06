@@ -14,21 +14,11 @@
       <%= yield %>
     </noscript>
     <div ng-view class="fade"></div>
-    <script type="text/ng-template" id="artists/index">
-      <div class="artists__index">
-        <h1>Artists</h1>
-        <div ng-repeat="artist in artists">
-          <a href="{{artist.path}}">
-            {{artist.first_name}} {{artist.last_name}}
-          </a>
-        </div>
-      </div>
-    </script>
-    <script type="text/ng-template" id="artists/show">
-      <div class="artists__show">
-        <h1>{{artist.first_name}} {{artist.last_name}}</h1>
-        <a href="<%= root_path %>">Artistes</a>
-      </div>
-    </script>
+    <% Dir['app/views/**/*.template.erb'].each do |path| %>
+      <% template = path.remove('app/views/').remove('.template.erb') %>
+      <script type="text/ng-template" id="<%= template %>">
+        <%= render file: "#{template}.template.erb" %>
+      </script>
+    <% end %>
   </body>
 </html>

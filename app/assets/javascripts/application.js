@@ -2,6 +2,7 @@
 //= require angular-animate.min
 //= require angular-route.min
 
+/* global angular */
 angular.module('application', ['ngRoute', 'ngAnimate'])
   .config(function ($routeProvider, $locationProvider) {
       'use strict';
