@@ -7,7 +7,7 @@ artists.each do |artist|
   first_name = name.split(', ').last
   last_name = name.split(', ').first
   puts "Creating #{name}"
-  a = Artist.where(id: id).first_or_create
+  a = Artist.where(id: id).first_or_initialize
   a.first_name = first_name
   a.last_name = last_name
   a.save
@@ -20,7 +20,7 @@ artworks.each do |artwork|
   title = artwork[5]
   image = artwork[18]
   puts "Creating #{title}"
-  a = Artwork.where(id: id).first_or_create
+  a = Artwork.where(id: id).first_or_initialize
   a.title = title
   a.image = image
   a.artist_id = artist_id
