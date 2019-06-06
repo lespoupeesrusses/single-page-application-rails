@@ -15,7 +15,7 @@ L'application doit être démarrée avant le chargement des controllers:
 
 ## HTML
 
-Le layout application présente plusieurs points importants.
+Le layout application (app/views/layouts/application.html.erb) présente plusieurs points importants.
 
 1. L'instanciation d'application avec un nom, un contrôleur global et un cloak.
 
