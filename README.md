@@ -1,24 +1,13 @@
-# README
+# Single Page Application Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Vendor
 
-Things you may want to cover:
+Versions récentes et minifiées d'Angularjs, et des extensions animate et route.
 
-* Ruby version
+## Production
 
-* System dependencies
+Pour éviter le changement des noms de variables à la compilation, qui casse l'injection de dépendance d'Angular:
 
-* Configuration
+/config/environments/production.rb
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  config.assets.js_compressor = Uglifier.new(mangle: false)
